@@ -1,3 +1,3 @@
 <script>
-    window.location.href = "/proj3/pages/login.php";
+    window.location.href = "/rta-site/pages/login.php";
 </script>

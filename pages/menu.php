@@ -1,13 +1,13 @@
 <div class="sidebar" data-color="white" data-active-color="danger">
       <div class="logo">
-        <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+        <a class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="../assets/img/logo-small.png">
+            <img src="../assets/img/logo.webp">
           </div>
           <!-- <p>CT</p> -->
         </a>
-        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+        <a class="simple-text logo-normal">
+          Escola
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -15,13 +15,13 @@
           <li class="active ">
             <a href="./dashboard.html">
               <i class="nc-icon nc-bank"></i>
-              <p>Dashboard</p>
+              <p>INÍCIO</p>
             </a>
           </li>
           <li>
             <a href="./icons.html">
               <i class="nc-icon nc-diamond"></i>
-              <p>Icons</p>
+            <p>CADASTRO DE ALUNO</p>
             </a>
           </li>
           <li>

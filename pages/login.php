@@ -17,8 +17,8 @@
       <p class="message">Already registered? <a href="#">Sign In</a></p>
     </form>
     <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
+      <input type="text" id="idUser" placeholder="username"/>
+      <input type="password" id="idPassword" placeholder="password"/>
       <button>login</button>
       <p class="message">Not registered? <a href="#">Create an account</a></p>
     </form>
@@ -26,6 +26,16 @@
 </div>
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/login.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+    <script>
+      tippy('#idUser', {
+        content: 'Digite seu usuário',
+      });
+      tippy('#idPassword', {
+        content: 'Digite sua senha',
+      });
+    </script>
 </body>
 
 </html>
