@@ -7,13 +7,25 @@
               </div>
               <div class="card-body">
               <form class="row g-3">
-                <div class="col-md-6">
-                  <label for="inputEmail4" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="inputEmail4">
+                <div class="col-md-12">
+                  <label for="inputEmail4" class="form-label">Nome</label>
+                  <input type="text" name="nome" class="form-control" >
                 </div>
                 <div class="col-md-6">
-                  <label for="inputPassword4" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="inputPassword4">
+                  <label for="inputEmail4" class="form-label">Nome da mãe</label>
+                  <input type="text" name="nomeMae" class="form-control" >
+                </div>
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">Nome do pai</label>
+                  <input type="text" name="nomePai" class="form-control" >
+                </div>
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">Telefone de contato</label>
+                  <input type="text" name="telefone" class="form-control" >
+                </div>
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">CPF</label>
+                  <input type="text" name="cpf" class="form-control" >
                 </div>
                 </form>
               </div>
