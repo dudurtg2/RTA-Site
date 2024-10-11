@@ -21,11 +21,11 @@
                 </div>
                 <div class="col-md-6">
                   <label for="inputEmail4" class="form-label">Telefone de contato</label>
-                  <input type="text" name="telefone" required class="form-control" >
+                  <input type="text" id="tel_aluno" name="telefone" required class="form-control" >
                 </div>
                 <div class="col-md-6">
-                  <label for="inputEmail4" class="form-label">CPF</label>
-                  <input type="text" name="cpf" required class="form-control" >
+                  <label for="inputEmail4" class="form-label" >CPF</label>
+                  <input type="text" name="cpf" id="cpf_aluno" required class="form-control">
                 </div>
                 <div class="col-md-12">
                   <button type="submit" class="btn btn-primary">Salvar e Cadastrar</button>
