@@ -9,23 +9,26 @@
               <form class="row g-3">
                 <div class="col-md-12">
                   <label for="inputEmail4" class="form-label">Nome</label>
-                  <input type="text" name="nome" class="form-control" >
+                  <input type="text" name="nome" required class="form-control" >
                 </div>
                 <div class="col-md-6">
                   <label for="inputEmail4" class="form-label">Nome da mãe</label>
-                  <input type="text" name="nomeMae" class="form-control" >
+                  <input type="text" name="nomeMae" required class="form-control" >
                 </div>
                 <div class="col-md-6">
                   <label for="inputEmail4" class="form-label">Nome do pai</label>
-                  <input type="text" name="nomePai" class="form-control" >
+                  <input type="text" name="nomePai" required class="form-control" >
                 </div>
                 <div class="col-md-6">
                   <label for="inputEmail4" class="form-label">Telefone de contato</label>
-                  <input type="text" name="telefone" class="form-control" >
+                  <input type="text" name="telefone" required class="form-control" >
                 </div>
                 <div class="col-md-6">
                   <label for="inputEmail4" class="form-label">CPF</label>
-                  <input type="text" name="cpf" class="form-control" >
+                  <input type="text" name="cpf" required class="form-control" >
+                </div>
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-primary">Salvar e Cadastrar</button>
                 </div>
                 </form>
               </div>
