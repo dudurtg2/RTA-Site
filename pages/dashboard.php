@@ -15,6 +15,9 @@
               case 'cadAluno':
                 include 'template/cadAluno.php';
                 break;
+              case 'cadFuncionario':
+                include 'template/cadFuncionario.php';
+                break;
             }
           ?>
       </div>

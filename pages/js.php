@@ -21,6 +21,8 @@
   <script>
     $(document).ready(function(){
       $('#cpf_aluno').mask('000.000.000-00');
+      $('#cpf_funcionario').mask('000.000.000-00');
       $('#tel_aluno').mask('(00) 00000-0000');
+      $('#telefone_funcionario').mask('(00) 00000-0000');
     });
   </script>

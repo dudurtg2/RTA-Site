@@ -19,15 +19,15 @@
             </a>
           </li>
           <li>
-            <a href="./icons.html">
+            <a href="./dashboard.php?r=cadAluno">
               <i class="nc-icon nc-diamond"></i>
             <p>CADASTRO DE ALUNO</p>
             </a>
           </li>
           <li>
-            <a href="./map.html">
+            <a href="./dashboard.php?r=cadFuncionario">
               <i class="nc-icon nc-pin-3"></i>
-              <p>Maps</p>
+              <p>CADASTRO FUNCIONÁRIO</p>
             </a>
           </li>
           <li>
