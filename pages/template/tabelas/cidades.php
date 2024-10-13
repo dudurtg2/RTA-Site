@@ -20,34 +20,41 @@
         $response = curl_exec($ch);
 
         if (!$response) {
-            echo '<div class="alert alert-danger" role="alert">Erro ao buscar as cidades!</div>';
+          echo '<div class="alert alert-danger" role="alert">Erro ao buscar as cidades!</div>';
         } else {
             $cidades = json_decode($response, true);
 
             if (count($cidades) > 0) {
-                echo '<table class="table table-striped">';
-                echo '<thead><tr><th>Região</th><th>Nome</th><th>CEp</th></tr></thead>';
-                echo '<tbody>';
-                
-                foreach ($cidades as $cidade) {
-                  
-                    echo '<tr>';
-                    echo '<td>' . htmlspecialchars($cidade['idRegiao']['nome']) . '</td>';
-                    echo '<td>' . htmlspecialchars($cidade['nome']) . '</td>';
-                    echo '<td>' . htmlspecialchars($cidade['cep']) . '</td>';
-                    echo '</tr>';
-                    
-                }
+              echo '<div class="row g-3">';
+              foreach ($cidades as $cidade) {
 
-                echo '</tbody>';
-                echo '</table>';
-                
-                
+                echo '<div class="col-lg-4 col-md-6 col-sm-6">
+                  <div class="card card-stats">
+                    <div class="card-body">
+                      <div class="row">                 
+                        <div class="col-7 col-md-8">
+                          <div class="testes">
+                            <p class="card-test">' . htmlspecialchars($cidade['nome']) . '<p>
+                            <p class="card-category">' . htmlspecialchars($cidade['cep']) . '</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer ">
+                      <hr>
+                      <div class="stats">
+                        <i class="fa fa-refresh"></i>
+                        ' . htmlspecialchars($cidade['idRegiao']['nome']) . '
+                      </div>
+                    </div>
+                  </div>
+                </div>';
+              } 
+              echo '</div>';
             } else {
                 echo '<div class="alert alert-warning" role="alert">Nenhuma cidade encontrado.</div>';
             }
         }
-
         curl_close($ch);
         ?>
       </div>

@@ -20,6 +20,11 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
 
 Copyright (c) 2015 Daniel Eden
 */
+.testes .card-test{
+  font-size: 15px;
+  font-weight: bold;
+  text-align: start;
+}
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
