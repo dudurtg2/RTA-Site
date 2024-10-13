@@ -20,7 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $jsonData = json_encode($data);
 
-    $url = 'http://localhost:30514/funcionarios/save';
+    $apiUrl = ENV_KEY();
+    
+    $url = $apiUrl . '/funcionarios/save';
 
     $ch = curl_init($url);
 

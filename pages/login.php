@@ -16,10 +16,10 @@
       <button>create</button>
       <p class="message">Already registered? <a href="#">Sign In</a></p>
     </form>
-    <form class="login-form">
-      <input type="text" id="idUser" placeholder="username"/>
-      <input type="password" id="idPassword" placeholder="password"/>
-      <button>login</button>
+    <form class="login-form" method="post" action="../_scripts/auth.php">
+      <input type="text" id="idUser"  name="username" placeholder="username"/>
+      <input type="password" id="idPassword" name="password" placeholder="password"/>
+      <button type="submit" class="btn btn-primary">login</button>
       <p class="message">Not registered? <a href="#">Create an account</a></p>
     </form>
   </div>

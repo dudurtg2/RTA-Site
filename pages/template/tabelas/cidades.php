@@ -6,7 +6,9 @@
       </div>
       <div class="card-body">
         <?php
-        $url = 'http://localhost:30514/cidades/findAll';
+        $apiUrl = ENV_KEY();
+        
+        $url = $apiUrl . '/cidades/findAll';
 
         $ch = curl_init($url);
 
