@@ -12,15 +12,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $data = array(
         'nome' => $_POST['nome'],
-        'email' => $_POST['email'],
-        'senha' => md5($_POST['senha']),
-        'telefone' => $_POST['telefone'],
-        'cpf' => $_POST['cpf']
+        'cep' => $_POST['cep'],
+        'idRegiao' => array('id' => $_POST['idRegiao'])
     );
 
     $jsonData = json_encode($data);
 
-    $url = 'http://localhost:30514/funcionarios/save';
+    $url = 'http://localhost:30514/cidades/save';
 
     $ch = curl_init($url);
 
@@ -47,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               type: "success"
           }).then((okay) => {
               if (okay) {
-                  window.location.href = '../../pages/dashboard.php?r=cadFuncionario';                 
+                  window.location.href = '../../pages/dashboard.php?r=cadCidades';                 
               }
           });
       </script>
@@ -61,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               type: "error"
           }).then((okay) => {
               if (okay) {
-                  window.location.href = '../../pages/dashboard.php?r=cadFuncionario';
+                  window.location.href = '../../pages/dashboard.php?r=cadCidades';
               }
           });
       </script>
@@ -75,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           type: "error"
       }).then(okay => {
           if (okay) {
-              window.location.href = '../../pages/dashboard.php?r=cadFuncionario';
+              window.location.href = '../../pages/dashboard.php?r=cadCidades';
           }
       });
   </script>

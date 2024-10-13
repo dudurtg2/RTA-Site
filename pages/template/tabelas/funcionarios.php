@@ -6,7 +6,7 @@
       </div>
       <div class="card-body">
         <?php
-        $url = 'http://localhost:8080/funcionarios/findAll';
+        $url = 'http://localhost:30514/funcionarios/findAll';
 
         $ch = curl_init($url);
 

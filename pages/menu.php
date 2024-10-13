@@ -31,9 +31,9 @@
             </a>
           </li>
           <li>
-            <a href="./notifications.html">
+            <a href="./dashboard.php?r=cadCidade">
               <i class="nc-icon nc-bell-55"></i>
-              <p>Notifications</p>
+              <p>CADASTRO DE CIDADE</p>
             </a>
           </li>
           <li>

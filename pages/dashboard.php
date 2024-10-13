@@ -18,6 +18,9 @@
               case 'cadFuncionario':
                 include 'template/cadFuncionario.php';
                 break;
+              case 'cadCidade':
+                include 'template/cadCidade.php';
+                break;
             }
           ?>
       </div>
