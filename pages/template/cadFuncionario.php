@@ -1,4 +1,5 @@
 
+<?php include 'tabelas/funcionarios.php'?>
 <div class="row">
   <div class="col-md-12">
     <div class="card">
@@ -41,5 +42,5 @@
   </div>
   
 </div>
-<?php include 'tabelas/funcionarios.php'?>
+
 

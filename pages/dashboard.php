@@ -13,6 +13,9 @@
     global $apiUrl;
     return $apiUrl;
   }
+
+  $regiaoSelect = 1;
+  global $regiaoSelect;
 ?>
 
 <body class="">

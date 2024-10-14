@@ -30,6 +30,7 @@
                 echo '<tbody>';
                 
                 foreach ($funcionarios as $funcionario) {
+                    
                     echo '<tr>';
                     echo '<td>' . htmlspecialchars($funcionario['nome']) . '</td>';
                     echo '<td>' . htmlspecialchars($funcionario['email']) . '</td>';

@@ -1,4 +1,13 @@
 
+<?php
+  include 'tabelas/regiao.php';
+
+  if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['regiao_id'])) {
+      $regiaoSelect = htmlspecialchars($_POST['regiao_id']);
+  }
+
+  include 'tabelas/cidades.php';
+?>
 <div class="row">
   <div class="col-md-12">
     <div class="card">
@@ -19,16 +28,16 @@
             <label class="form-label">Id</label>
             <input type="number" name="idBase" required class="form-control">
           </div>
-          
           <div class="col-md-12">
             <button type="submit" class="btn btn-primary">Salvar e Cadastrar</button>
           </div>
-        </form>
-        
+        </form> 
       </div>
     </div>
   </div>
-  
 </div>
-<?php include 'tabelas/cidades.php'?>
+
+
+
+
 
