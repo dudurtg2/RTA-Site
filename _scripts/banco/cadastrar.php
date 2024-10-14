@@ -15,7 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'email' => $_POST['email'],
         'senha' => md5($_POST['senha']),
         'telefone' => $_POST['telefone'],
-        'cpf' => $_POST['cpf']
+        'cpf' => $_POST['cpf'],
+        'idBase' => array('id' => $_POST['idBase'])
     );
 
     $jsonData = json_encode($data);

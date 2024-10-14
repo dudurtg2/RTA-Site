@@ -7,9 +7,13 @@
       </div>
       <div class="card-body">
         <form class="row g-3" method="post" action="../_scripts/banco/cadastrar.php">
-          <div class="col-md-12">
+          <div class="col-md-10">
             <label class="form-label">Nome</label>
             <input type="text" name="nome" required class="form-control">
+          </div>
+          <div class="col-md-2">
+            <label class="form-label">Base</label>
+            <input type="number" name="base" required class="form-control">
           </div>
           <div class="col-md-6">
             <label class="form-label">Email</label>
