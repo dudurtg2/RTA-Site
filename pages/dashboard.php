@@ -1,6 +1,4 @@
 
-<!DOCTYPE html>
-<html lang="pt_br">
 <?php 
   include 'head.php';
   require '../vendor/autoload.php';
@@ -27,7 +25,7 @@
     <div class="main-panel">
       <?php include 'header.php'?>
       <div class="content">
-        
+        <?php include 'cards.php';?>
         <?php
         if (isset($_GET['r'])) {
             switch ($_GET['r']) {
@@ -39,6 +37,9 @@
                 break;
               case 'cadCidade':
                 include 'template/cadCidade.php';
+                break;
+              case 'cadProf':
+                include 'template/cadProf.php';
                 break;
               default:
                 $baseSelect = $_GET['r'];
