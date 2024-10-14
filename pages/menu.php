@@ -2,12 +2,12 @@
       <div class="logo">
         <a class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="../assets/img/logo.webp">
+            <img src="../assets/img/logo.png">
           </div>
           <!-- <p>CT</p> -->
         </a>
         <a class="simple-text logo-normal">
-          Escola
+          RTA System
         </a>
       </div>
       <div class="sidebar-wrapper">

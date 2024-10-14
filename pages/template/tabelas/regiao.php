@@ -28,13 +28,15 @@
               echo '<div class="card-body"> 
                       <div class="row g-3">';
               foreach ($regioes as $regioe) {
-                echo '<form class="row g-3" method="post" action="">
+              //if($baseSelect == htmlspecialchars($regioe['idBase']['id'])){
+                  echo '<form class="row g-3" method="post" action="">
                         <div class="col-md-12">
                           <input type="hidden" name="regiao_id" value="'. htmlspecialchars($regioe['id']) .'">
                           <button type="submit" class="btn btn-primary">'. htmlspecialchars($regioe['nome']) .'</button>
                         </div>
                       </form>';
-              }
+                  }
+              //}
               echo '</div>';
               echo '</div>';
           } else {

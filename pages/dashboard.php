@@ -15,6 +15,9 @@
   }
 
   $regiaoSelect = 1;
+  $baseSelect;
+
+  global $baseSelect;
   global $regiaoSelect;
 ?>
 
@@ -24,7 +27,7 @@
     <div class="main-panel">
       <?php include 'header.php'?>
       <div class="content">
-        <?php include 'cards.php'?>
+        
         <?php
         if (isset($_GET['r'])) {
             switch ($_GET['r']) {
@@ -37,6 +40,10 @@
               case 'cadCidade':
                 include 'template/cadCidade.php';
                 break;
+              default:
+                $baseSelect = $_GET['r'];
+                print_r($baseSelect);
+                
             }
         }
           ?>
