@@ -1,5 +1,5 @@
 
-<?php include '../_scripts/conexao.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

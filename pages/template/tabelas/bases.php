@@ -6,7 +6,7 @@ if (!isset($_SESSION['access_token'])) {
 
 $accessToken = $_SESSION['access_token'];
 
-$url = 'http://localhost:30514/bases/findAll';
+$url = 'http://200.26.254.139:30514/bases/findAll';
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(

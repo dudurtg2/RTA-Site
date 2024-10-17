@@ -3,8 +3,9 @@
   include 'head.php';
 
   $regiaoSelect = 1;
-  
+  $baseSelect = 1;
 
+  global $baseSelect;
   global $regiaoSelect;
 ?>
 

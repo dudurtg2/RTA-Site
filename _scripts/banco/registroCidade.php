@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $jsonData = json_encode($data);
 
-    $url = 'http://localhost:30514/cidades/save';
+    $url = 'http://200.26.254.139:30514/cidades/save';
 
     $ch = curl_init($url);
 

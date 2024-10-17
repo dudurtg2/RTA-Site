@@ -1,5 +1,5 @@
 <?php
-$servidor = 'localhost';
+$servidor = '200.26.254.139';
 $usuario = 'root';
 $senha = '';
 $banco = 'mercado_b';
