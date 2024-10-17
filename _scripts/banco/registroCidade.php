@@ -8,7 +8,14 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <body>
 <?php
+    if (!isset($_SESSION['access_token'])) {
+        return 'Usuário não autenticado'; 
+    }
+
+    $accessToken = $_SESSION['access_token'];
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    
 
     $data = array(
         'nome' => $_POST['nome'],
@@ -18,16 +25,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $jsonData = json_encode($data);
 
-    $apiUrl = ENV_KEY();
-    
-    $url = $apiUrl . '/cidades/save';
+    $url = 'http://localhost:30514/cidades/save';
 
     $ch = curl_init($url);
 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Content-Type: application/json',
-        'Content-Length: ' . strlen($jsonData)
+        'Content-Length: ' . strlen($jsonData),
+        'Authorization: Bearer ' . $accessToken
     ));
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
@@ -47,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               type: "success"
           }).then((okay) => {
               if (okay) {
-                  window.location.href = '../../pages/dashboard.php?r=cadCidades';                 
+                  window.location.href = '../../pages/dashboard.php?r=cadCidade';                 
               }
           });
       </script>
@@ -61,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               type: "error"
           }).then((okay) => {
               if (okay) {
-                  window.location.href = '../../pages/dashboard.php?r=cadCidades';
+                  window.location.href = '../../pages/dashboard.php?r=cadCidade';
               }
           });
       </script>
@@ -75,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           type: "error"
       }).then(okay => {
           if (okay) {
-              window.location.href = '../../pages/dashboard.php?r=cadCidades';
+              window.location.href = '../../pages/dashboard.php?r=cadCidade';
           }
       });
   </script>

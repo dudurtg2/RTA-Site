@@ -6,15 +6,20 @@
       </div>
       <div class="card-body">
         <?php
-        $apiUrl = ENV_KEY();
-        
-        $url = $apiUrl . '/cidades/findAll';
+        if (!isset($_SESSION['access_token'])) {
+          return 'Usuário não autenticado'; 
+        }
+
+        $accessToken = $_SESSION['access_token'];
+
+        $url = 'http://localhost:30514/cidades/findAll';
 
         $ch = curl_init($url);
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Content-Type: application/json'
+            'Content-Type: application/json',
+            'Authorization: Bearer ' . $accessToken
         ));
 
         $response = curl_exec($ch);

@@ -8,25 +8,48 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <body>
 <?php
-
-if (isset($_POST['username']) && isset($_POST['password'])) {
-
-    $apiUrl = ENV_KEY();
+function login($username, $password) {
     
-    $url = $apiUrl . '/funcionarios/findByEmail/' . $_POST['username'];
-    $ch = curl_init($url);
+    $url = 'http://localhost:30514/auth/login';
+
+    $loginUrl = $url;
+
+    $data = array(
+        'login' => $username,
+        'senha' => $password
+    );
+
+    $ch = curl_init($loginUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json'
+    ));
+
     $response = curl_exec($ch);
 
-    if (!$response) {
-        echo '<div class="alert alert-danger" role="alert">Erro ao conectar ao servidor!</div>';
-    } else {
-        $auth = json_decode($response, true);
-        $password = md5($_POST['password']);
+    if(curl_errno($ch)) {
+        $error_msg = curl_error($ch);
+        curl_close($ch);
+        return false; 
+    }
 
-        if (isset($auth['senha']) && $auth['senha'] == $password) {
-            ?> <script language='javascript'>
+    $result = json_decode($response, true);
+    curl_close($ch);
+
+    if (isset($result['token'])) {
+        $_SESSION['access_token'] = $result['token'];
+        return true; 
+    } else {
+        return false; 
+    }
+}
+
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    if (!empty($_POST['username']) && !empty($_POST['password'])) {
+        if (login($_POST['username'], $_POST['password'])) {
+            ?> 
+            <script language='javascript'>
                 swal.fire({
                     icon:"success",
                     text:"Login realizado com sucesso!",
@@ -36,23 +59,27 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                         window.location.href='/rta-site/pages/dashboard.php';                 
                     }
                 });
-            </script> <?php 
+            </script> 
+            <?php 
         } else {
-            ?> <script language='javascript'>
+            ?> 
+            <script language='javascript'>
                 swal.fire({
                     icon:"error",
                     text:"Dados incorretos. Tente novamente :/",
-                    type:"success"
+                    type:"error"  
                 }).then(okay=>{
                     if(okay){
                         window.location.href='/rta-site/pages/login.php';
-
                     }
                 });
-            </script> <?php
+            </script> 
+            <?php
         }
+    } else {
+        echo '<div class="alert alert-danger" role="alert">Por favor, preencha todos os campos!</div>';
     }
-} else {
-    echo '<div class="alert alert-danger" role="alert">Por favor, preencha todos os campos!</div>';
 }
 ?>
+</body>
+</html>

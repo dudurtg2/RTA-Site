@@ -8,7 +8,15 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <body>
 <?php
+session_start();
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!isset($_SESSION['access_token'])) {
+        return 'Usuário não autenticado'; 
+    }
+
+    $accessToken = $_SESSION['access_token'];
 
     $data = array(
         'nome' => $_POST['nome'],
@@ -21,16 +29,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $jsonData = json_encode($data);
 
-    $apiUrl = ENV_KEY();
-    
-    $url = $apiUrl . '/funcionarios/save';
+    $url = 'http://localhost:30514/funcionarios/save';
 
     $ch = curl_init($url);
 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Content-Type: application/json',
-        'Content-Length: ' . strlen($jsonData)
+        'Content-Length: ' . strlen($jsonData),
+        'Authorization: Bearer ' . $accessToken
     ));
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);

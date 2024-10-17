@@ -26,7 +26,7 @@
           </div>
           <div class="col-md-2">
             <label class="form-label">Id</label>
-            <input type="number" name="idBase" required class="form-control">
+            <input type="number" name="idRegiao" required class="form-control">
           </div>
           <div class="col-md-12">
             <button type="submit" class="btn btn-primary">Salvar e Cadastrar</button>

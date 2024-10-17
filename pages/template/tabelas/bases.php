@@ -1,12 +1,17 @@
 
 <?php
-$apiUrl = ENV_KEY();
+if (!isset($_SESSION['access_token'])) {
+  return 'Usuário não autenticado'; 
+}
 
-$url = $apiUrl . '/bases/findAll';
+$accessToken = $_SESSION['access_token'];
+
+$url = 'http://localhost:30514/bases/findAll';
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    'Content-Type: application/json'
+    'Content-Type: application/json',
+    'Authorization: Bearer ' . $accessToken
 ));
 $response = curl_exec($ch);
 if (!$response) {
