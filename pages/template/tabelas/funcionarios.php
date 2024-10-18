@@ -31,7 +31,7 @@
             $funcionarios = json_decode($response, true);
 
             if (count($funcionarios) > 0) {
-                echo '<table class="table table-striped">';
+                echo '<table class="table id="example" table-striped">';
                 echo '<thead><tr><th>Nome</th><th>Email</th><th>Telefone</th><th>CPF</th></tr></thead>';
                 echo '<tbody>';
                 
@@ -54,6 +54,7 @@
 
         curl_close($ch);
         ?>
+        
       </div>
     </div>
   </div>
