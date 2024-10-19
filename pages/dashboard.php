@@ -18,30 +18,31 @@
         <?php include 'cards.php';?>
         <?php
         if (isset($_GET['r'])) {
-            switch ($_GET['r']) {
-              case 'cadAluno':
-                include 'template/cadAluno.php';
-                break;
+          switch ($_GET['r']) {
+            case 'cadAluno':
+              include 'template/cadAluno.php';
+              break;
               case 'cadFuncionario':
                 include 'template/cadFuncionario.php';
                 break;
-              case 'cadCidade':
-                include 'template/cadCidade.php';
-                break;
-              case 'cadProf':
-                include 'template/cadProf.php';
-                break;
-              default:
-                $baseSelect = $_GET['r'];
-                print_r($baseSelect);
-                
-            }
-        }
-          ?>
+                case 'cadCidade':
+                  include 'template/cadCidade.php';
+                  break;
+                  case 'cadProf':
+                    include 'template/cadProf.php';
+                    break;
+                    default:
+                    $baseSelect = $_GET['r'];
+                    print_r($baseSelect);
+                    
+                  }
+                }
+                ?>
       </div>
       <?php include 'footer.php'?>
     </div>
   </div>
   <?php include 'js.php'?>
+  
 </body>
 </html>

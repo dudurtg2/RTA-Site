@@ -14,42 +14,29 @@
 
     $accessToken = $_SESSION['access_token'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+        if (!isset($_GET['id']) || empty($_GET['id'])) {
+            return 'ID não fornecido';
+        }
     
+        $url = 'http://177.42.203.239:30514/cidades/deleteById/' . intval($_GET['id']);
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Content-Type: application/json',
+            'Authorization: Bearer ' . $accessToken
+        ));
+        
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
 
-    $data = array(
-        'nome' => $_POST['nome'],
-        'cep' => $_POST['cep'],
-        'idRegiao' => array('id' => $_POST['idRegiao'])
-    );
-
-    $jsonData = json_encode($data);
-
-    $url = 'http://177.42.203.239:30514/cidades/save';
-
-    $ch = curl_init($url);
-
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Content-Type: application/json',
-        'Content-Length: ' . strlen($jsonData),
-        'Authorization: Bearer ' . $accessToken
-    ));
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
-
-    $response = curl_exec($ch);
-
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-    curl_close($ch);
-
-    if ($httpCode == 201) { 
+    if ($httpCode == 200) {
       ?>
       <script language='javascript'>
           swal.fire({
               icon: "success",
-              text: "Funcionário cadastrado com sucesso!",
+              text: "Região cadastrado com sucesso!",
               type: "success"
           }).then((okay) => {
               if (okay) {

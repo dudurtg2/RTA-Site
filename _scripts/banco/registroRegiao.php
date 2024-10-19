@@ -19,13 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $data = array(
         'nome' => $_POST['nome'],
-        'cep' => $_POST['cep'],
-        'idRegiao' => array('id' => $_POST['idRegiao'])
+        'idRegiao' => array('id' => $_POST['idBase'])
     );
 
     $jsonData = json_encode($data);
 
-    $url = 'http://177.42.203.239:30514/cidades/save';
+    $url = 'http://177.42.203.239:30514/regioes/save';
 
     $ch = curl_init($url);
 
@@ -49,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <script language='javascript'>
           swal.fire({
               icon: "success",
-              text: "Funcionário cadastrado com sucesso!",
+              text: "Região cadastrado com sucesso!",
               type: "success"
           }).then((okay) => {
               if (okay) {

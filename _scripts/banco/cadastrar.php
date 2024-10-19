@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     );
 
     $RjsonData = json_encode($Rdata);
-    $Rurl = 'http://200.26.254.139:30514/auth/register';
+    $Rurl = 'http://177.42.203.239:30514/auth/register';
 
     
     $Rch = curl_init($Rurl);
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     curl_setopt($Rch, CURLOPT_POSTFIELDS, $RjsonData);
 
     $jsonData = json_encode($data);
-    $url = 'http://200.26.254.139:30514/funcionarios/save';
+    $url = 'http://177.42.203.239:30514/funcionarios/save';
 
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

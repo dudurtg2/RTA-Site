@@ -13,7 +13,7 @@
         
         $accessToken = $_SESSION['access_token'];
 
-        $url = 'http://200.26.254.139:30514/funcionarios/findAll';
+        $url = 'http://177.42.203.239:30514/funcionarios/findAll';
 
         $ch = curl_init($url);
 
@@ -31,8 +31,16 @@
             $funcionarios = json_decode($response, true);
 
             if (count($funcionarios) > 0) {
-                echo '<table class="table id="example" table-striped">';
-                echo '<thead><tr><th>Nome</th><th>Email</th><th>Telefone</th><th>CPF</th></tr></thead>';
+                echo '<table id="example" class="display" style="width:100%">';
+                echo '
+                <thead>
+                  <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>CPF</th>
+                  </tr>
+                </thead>';
                 echo '<tbody>';
                 
                 foreach ($funcionarios as $funcionario) {
@@ -45,7 +53,15 @@
                     echo '</tr>';
                 }
 
-                echo '</tbody>';
+                echo '</tbody>
+                <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+            </tr>
+        </tfoot>';
                 echo '</table>';
             } else {
                 echo '<div class="alert alert-warning" role="alert">Nenhum funcionário encontrado.</div>';

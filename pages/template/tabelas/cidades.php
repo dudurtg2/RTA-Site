@@ -12,7 +12,7 @@
 
         $accessToken = $_SESSION['access_token'];
 
-        $url = 'http://200.26.254.139:30514/cidades/findAll';
+        $url = 'http://177.42.203.239:30514/cidades/findAll';
 
         $ch = curl_init($url);
 
@@ -42,15 +42,22 @@
                             <div class="testes">
                               <p class="card-test">' . htmlspecialchars($cidade['nome']) . '<p>
                               <p class="card-category">' . htmlspecialchars($cidade['cep']) . '</p>
-                            </div>
+                              </div>
+                              
+                              <i class="fa-solid fa-pen-to-square btn btn-primary"></i>
+                              <a href="../_scripts/banco/deletaCidade.php?id=' . htmlspecialchars($cidade['id']) . '">
+                              <i class="fa-solid fa-trash btn btn-danger"></i> </a>
+                              
                           </div>
                         </div>
                       </div>
                       <div class="card-footer ">
                         <hr>
                         <div class="stats">
-                          <i class="fa fa-refresh"></i>
-                          ' . htmlspecialchars($cidade['idRegiao']['nome']) . '
+                          
+                          ' . htmlspecialchars($cidade['idRegiao']['nome']) . '  
+                          
+                        
                         </div>
                       </div>
                     </div>

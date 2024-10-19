@@ -8,7 +8,7 @@ function qtdeFuncionarios() {
 
     $accessToken = $_SESSION['access_token'];
     
-    $url = 'http://200.26.254.139:30514/funcionarios/findAll';
+    $url = 'http://177.42.203.239:30514/funcionarios/findAll';
 
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

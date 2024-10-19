@@ -19,7 +19,7 @@
     });
   </script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-  <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js">new DataTable('#example');</script>
+  <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
   
   <script>
     $(document).ready(function(){
