@@ -46,7 +46,8 @@
                               
                               <i class="fa-solid fa-pen-to-square btn btn-primary"></i>
                               <a href="../_scripts/banco/deletaCidade.php?id=' . htmlspecialchars($cidade['id']) . '">
-                              <i class="fa-solid fa-trash btn btn-danger"></i> </a>
+                                <i class="fa-solid fa-trash btn btn-danger"></i> 
+                              </a>
                               
                           </div>
                         </div>

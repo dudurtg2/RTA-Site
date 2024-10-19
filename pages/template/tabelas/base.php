@@ -11,7 +11,7 @@
         }
 
         $accessToken = $_SESSION['access_token'];
-        $url = 'http://localhost:30514/regioes/findAll';
+        $url = 'http://localhost:30514/bases/findAll';
 
         $ch = curl_init($url);
 

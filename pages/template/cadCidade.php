@@ -1,5 +1,6 @@
 
 <?php
+include 'tabelas/base.php';
   include 'tabelas/regiao.php';
 ?>
 <div class="row">
