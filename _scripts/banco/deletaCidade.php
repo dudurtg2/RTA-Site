@@ -19,7 +19,7 @@
             return 'ID não fornecido';
         }
     
-        $url = 'http://177.42.203.239:30514/cidades/deleteById/' . intval($_GET['id']);
+        $url = 'http://localhost:30514/cidades/deleteById/' . intval($_GET['id']);
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(

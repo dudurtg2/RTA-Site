@@ -10,7 +10,7 @@
 <?php
 function login($username, $password) {
     
-    $url = 'http://177.42.203.239:30514/auth/login';
+    $url = 'http://localhost:30514/auth/login';
 
     $loginUrl = $url;
 

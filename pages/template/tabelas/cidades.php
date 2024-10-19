@@ -12,7 +12,7 @@
 
         $accessToken = $_SESSION['access_token'];
 
-        $url = 'http://177.42.203.239:30514/cidades/findAll';
+        $url = 'http://localhost:30514/cidades/findAll';
 
         $ch = curl_init($url);
 
